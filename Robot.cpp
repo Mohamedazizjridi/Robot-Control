@@ -93,18 +93,6 @@ bool checkAuthentication(String header) {
   
   return (decoded == expected);
 }
-
-/* ================= ASCON ================= */
-uint8_t encryptionKey[16] = {
-  0x00, 0x01, 0x02, 0x03,
-  0x04, 0x05, 0x06, 0x07,
-  0x08, 0x09, 0x0A, 0x0B,
-  0x0C, 0x0D, 0x0E, 0x0F
-};
-
-uint8_t nonce[12] = {0};
-Ascon128 cipher;
-
 /* ================= MOTORS ================= */
 int motor1Pin1 = 27;
 int motor1Pin2 = 26;
@@ -277,4 +265,5 @@ void loop() {
     client.stop();
     Serial.println(">>> Client disconnected\n");
   }
+
 }
